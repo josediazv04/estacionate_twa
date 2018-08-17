@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateLocalsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('local', function (Blueprint $table) {
+            $table->increments('id'); // id autoincremental
+            $table->integer('coor_x'); // Coordenada X
+            $table->integer('coor_y'); // Coordenada Y
+            $table->integer('cant_est'); // Cantidad de estacionamientos
+            $table->integer('cant_disp'); // Cantidad de estacionamientos disponibles
+            $table->dateTime('hora_aten_ini'); // Horario de Inicio de Atención
+            $table->dateTime('hora_aten_ter'); // Horario de Termino de Atención
+            $table->string('direccion'); // Dirección del estacionamiento
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('locals');
+    }
+}
