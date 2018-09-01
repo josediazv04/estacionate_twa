@@ -13,14 +13,16 @@ class CreateLocalsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('local');
+
         Schema::create('local', function (Blueprint $table) {
             $table->increments('id'); // id autoincremental
-            $table->integer('coor_x'); // Coordenada X
-            $table->integer('coor_y'); // Coordenada Y
+            $table->float('coor_x'); // Coordenada X
+            $table->float('coor_y'); // Coordenada Y
             $table->integer('cant_est'); // Cantidad de estacionamientos
             $table->integer('cant_disp'); // Cantidad de estacionamientos disponibles
-            $table->dateTime('hora_aten_ini'); // Horario de Inicio de Atención
-            $table->dateTime('hora_aten_ter'); // Horario de Termino de Atención
+            $table->string('hora_aten_ini'); // Horario de Inicio de Atención
+            $table->string('hora_aten_ter'); // Horario de Termino de Atención
             $table->string('direccion'); // Dirección del estacionamiento
         });
     }
@@ -32,6 +34,6 @@ class CreateLocalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locals');
+        Schema::dropIfExists('local');
     }
 }

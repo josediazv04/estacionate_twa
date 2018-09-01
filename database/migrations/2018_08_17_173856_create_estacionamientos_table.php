@@ -13,6 +13,8 @@ class CreateEstacionamientosTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('estacionamiento');
+
         Schema::create('estacionamiento', function (Blueprint $table) {
             $table->increments('id'); // Id incremental estacionamiento
             $table->boolean('estado'); // Estado del estacionamiento
@@ -27,6 +29,6 @@ class CreateEstacionamientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estacionamientos');
+        Schema::dropIfExists('estacionamiento');
     }
 }

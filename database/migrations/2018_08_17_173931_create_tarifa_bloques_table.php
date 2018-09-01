@@ -13,6 +13,8 @@ class CreateTarifaBloquesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('tarifa_bloque');
+        
         Schema::create('tarifa_bloque', function (Blueprint $table) {
             $table->increments('id'); // Id incremental de la tarifa de los bloques
             $table->integer('valor'); // Valor del bloque
@@ -29,6 +31,6 @@ class CreateTarifaBloquesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tarifa_bloques');
+        Schema::dropIfExists('tarifa_bloque');
     }
 }

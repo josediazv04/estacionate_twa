@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/estacionamientos', ['as' => 'home', 'uses' => 'EstacionamientoController@index']);
+
+Route::get('/locales', ['as' => 'home', 'uses' => 'LocalController@index']);

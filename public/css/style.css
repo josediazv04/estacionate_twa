@@ -1,0 +1,104 @@
+html, body {
+    background: url('../img/fondo.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    color: #636b6f;
+    /*font-family: 'Raleway', sans-serif;*/
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+#logo{
+    font-family: Verdana, Arial;
+    font-size: 30px;
+    letter-spacing: 4px;
+    line-height: 80px;
+    color: #00385a;
+    text-align: center;
+    background: #eaeaea;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.lista-sin-punto{
+    list-style:none;
+}
+
+.centrar-todo{
+    width: 200px;
+}
+
+.global {
+    width: 65%;
+    margin: 0px auto;
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 2px gray;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+footer {
+    font-family: Verdana, Arial;
+    color: rgb(253, 253, 255);
+    height: 150px;
+    background: #363636;
+    margin: 0px auto;
+    width: 65%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
