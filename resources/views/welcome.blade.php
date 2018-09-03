@@ -25,7 +25,7 @@
         <div class="clearfix"></div>
         <section>
             <div class="mx-auto text-center">
-                <h2>Avance 31 de Agosto - Controladores y Vistas</h2>
+                <h2>Busca el estacionamiento más cercano</h2>
                 <br>
                 <ul class="lista-sin-punto">
                     <li><a href="/locales" class="btn btn-success"><h3>Lista de Locales</h3></a></li>
