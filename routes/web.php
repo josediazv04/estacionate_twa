@@ -15,9 +15,9 @@
     return view('welcome');
 });*/
 
-Route::get('/', ['as' => 'home', 'uses' => 'mapController@index']);
+Route::get('/', ['as' => 'home', 'uses' => 'MapController@index']);
 
-Route::get('/estacionamientos', ['as' => 'home', 'uses' => 'EstacionamientoController@index']);
+//Route::get('/estacionamientos', ['as' => 'home', 'uses' => 'EstacionamientoController@index']);
 
 Route::get('/locales', ['as' => 'home', 'uses' => 'LocalController@index']);
 

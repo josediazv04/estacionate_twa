@@ -14,8 +14,8 @@ class LocalSeeder extends Seeder
         \App\local::truncate();
 
         \App\local::create([
-            'coor_x' => -22.081373,
-            'coor_y' => -70.0188886,
+            'coor_x' => -23.6494637,
+            'coor_y' => -70.3998571,
             'cant_est' => 10,
             'cant_disp' => 5,
             'hora_aten_ini' => '10:00',
@@ -24,8 +24,8 @@ class LocalSeeder extends Seeder
         ]);
 
         \App\local::create([
-            'coor_x' => -20.581350,
-            'coor_y' => -75.1188860,
+            'coor_x' => -23.680103,
+            'coor_y' => -70.4102306,
             'cant_est' => 25,
             'cant_disp' => 14,
             'hora_aten_ini' => '08:00',

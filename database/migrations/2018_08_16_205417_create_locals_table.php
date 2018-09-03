@@ -17,8 +17,8 @@ class CreateLocalsTable extends Migration
 
         Schema::create('local', function (Blueprint $table) {
             $table->increments('id'); // id autoincremental
-            $table->float('coor_x'); // Coordenada X
-            $table->float('coor_y'); // Coordenada Y
+            $table->float('coor_x',10,7); // Coordenada X
+            $table->float('coor_y',10,7); // Coordenada Y
             $table->integer('cant_est'); // Cantidad de estacionamientos
             $table->integer('cant_disp'); // Cantidad de estacionamientos disponibles
             $table->string('hora_aten_ini'); // Horario de Inicio de Atención
