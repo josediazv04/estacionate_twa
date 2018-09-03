@@ -2,22 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\LocalController;
+use App\Local;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Mapper;
 
-class mapController extends Controller
+class MapController extends Controller
 {
 
     public function index()
     {
+        // Se obtienen los locales
+        $locales = Local::get();
 
         // Se obtiene la ubicacion actual del usuario
         Mapper::map(0, 0, ['zoom' => 15, 'locate' => true, 'markers' => ['title' => 'Mi ubicación','animation' => 'DROP']]);
 
-        $direccionesX = [-23.658243, -23.657457, -23.656631,-23.6494637,-23.680103];
-        $direccionesY = [-70.400022, -70.399153, -70.399968,-70.3998571,-70.4102306];
-        for($i = 0; $i < count($direccionesX); $i++){
-            Mapper::marker($direccionesX[$i], $direccionesY[$i], ['symbol' => 'circle', 'scale' => 1000, 'title' => 'Mi ubicación2']);
+        // Se iteran los locales
+        foreach($locales as $local){
+            // Se agrega un marcador por cada local existente
+            Mapper::marker($local->coor_x, $local->coor_y, ['symbol' => 'circle',
+                                                            'scale' => 1000,
+                                                            'title' => $local->direccion
+                                                            ]
+                            );
+
         }
 
         return view('welcome');
