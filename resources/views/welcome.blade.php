@@ -31,6 +31,9 @@
                     <li><a href="/locales" class="btn btn-success"><h3>Lista de Locales</h3></a></li>
                 </ul>
             </div>
+            <div style="margin-left: auto; margin-right: auto; width: 500px; height: 500px;">
+                {!! Mapper::render() !!}
+            </div>
         </section>
     </section>
     <footer>
