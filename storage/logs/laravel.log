@@ -3137,3 +3137,5 @@
  (SQL: select * from `Local`)  
 [2018-09-04 01:42:18] local.ERROR: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
  (SQL: select * from `Local`)  
+[2018-09-04 01:43:58] local.ERROR: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ (SQL: select * from `Local`)  
