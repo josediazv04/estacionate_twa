@@ -42,11 +42,16 @@ class MapController extends Controller
             $titulo.= "Horario de: " . $local->hora_aten_ini  . " a " . $local->hora_aten_ter . "\n";
 
             // Se agrega un marcador por cada local existente
-            Mapper::marker($local->coor_x, $local->coor_y, ['symbol' => 'circle',
+            /*Mapper::marker($local->coor_x, $local->coor_y, ['symbol' => 'circle',
                                                             'scale' => 1000,
                                                             'title' => $titulo
                                                             ]
-                            );
+                            );*/
+
+            // Se agrega un marcador por cada local existente
+            Mapper::informationWindow($local->coor_x, $local->coor_y, $titulo, ['open' => false, 'maxWidth'=> 300, 'markers' => ['title' => $titulo]]);
+
+
         }
 
         return view('welcome');
