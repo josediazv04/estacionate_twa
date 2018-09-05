@@ -102,5 +102,6 @@ class LocalSeeder extends Seeder
             'hora_aten_ter' => '22:30',
             'direccion' => 'direccion de prueba 9'
         ]);
+
     }
 }

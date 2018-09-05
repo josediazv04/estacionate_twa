@@ -21,3 +21,11 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Estacionamiento::class, function (Faker $faker) {
+
+    return [
+        'estado' => $faker->regexify('(0|1)'),
+        'local_id' => $faker->numberBetween($min = 1, $max = 9)
+    ];
+});
