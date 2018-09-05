@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(LocalSeeder::class);
         $this->call(EstacionamientoSeeder::class);
+        $this->call(TarifaBloqueSeeder::class);
     }
 }

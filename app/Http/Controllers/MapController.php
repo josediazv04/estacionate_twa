@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Estacionamiento;
-use App\Http\Controllers\LocalController;
 use App\Local;
+use App\TarifaBloque;
+
+use App\Http\Controllers\LocalController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Mapper;
@@ -33,20 +35,31 @@ class MapController extends Controller
             $total_est = Estacionamiento::where('local_id',$local->id)->get();
             $total_est_disp = Estacionamiento::where('local_id',$local->id)->where('estado',0)->get();
 
-            $titulo.= "Cantidad total: " . $total_est . "\n";
-            $titulo.= "Cantidad disponible: " . $total_est_disp ."\n";
+            $titulo.= "Cantidad total: " . count($total_est) . "<br>";
+            $titulo.= "Cantidad disponible: " . count($total_est_disp) ."<br>";
 
             // Se pregunta si esta cerrado o abierto
             if($hra_actual>$local->hora_aten_ini && $hra_actual<$local->hora_aten_ter){
-                $titulo.= "Se encuentra: ABIERTO \n";
+                $titulo.= "Se encuentra: ABIERTO" . "<br>";
             }else{
-                $titulo.= "Se encuentra: CERRADO \n";
+                $titulo.= "Se encuentra: CERRADO" . "<br>";
             }
             // Se agrega el horario
-            $titulo.= "Horario de: " . $local->hora_aten_ini  . " a " . $local->hora_aten_ter . "\n";
+            $titulo.= "Horario de: " . $local->hora_aten_ini  . " a " . $local->hora_aten_ter . "<br>";
+
+            $tarifas= TarifaBloque::where('local_id',$local->id)->get();
+
+            // Se agregan las tarifas
+            $titulo.= "Tarifas: " . "<br>";
+
+            foreach($tarifas as $tarifa){
+                $titulo.=$tarifa->hora_ini. " - ";
+                $titulo.=$tarifa->hora_ter ." valor: $";
+                $titulo.=$tarifa->valor . "<br>";
+            }
 
             // Se agrega un marcador por cada local existente
-            Mapper::informationWindow($local->coor_x, $local->coor_y, $titulo, ['open' => false, 'maxWidth'=> 300, 'markers' => ['title' => $titulo]]);
+            Mapper::informationWindow($local->coor_x, $local->coor_y, $titulo, ['open' => false, 'maxWidth'=> 200, 'markers' => ['title' => $titulo]]);
 
         }
 

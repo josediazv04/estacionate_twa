@@ -18,8 +18,8 @@ class CreateTarifaBloquesTable extends Migration
         Schema::create('tarifa_bloque', function (Blueprint $table) {
             $table->increments('id'); // Id incremental de la tarifa de los bloques
             $table->integer('valor'); // Valor del bloque
-            $table->dateTime('hora_ini'); // Hora de inicio del bloque
-            $table->dateTime('hora_ter'); // Hora de término del bloque
+            $table->string('hora_ini'); // Hora de inicio del bloque
+            $table->string('hora_ter'); // Hora de término del bloque
             $table->integer('local_id')->unsigned(); // Foreign Key del local
         });
     }
