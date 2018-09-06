@@ -25,7 +25,8 @@
         <div class="clearfix"></div>
         <section>
             <div class="mx-auto text-center">
-                <h2>Busca el estacionamiento más cercano</h2>
+                <h2>Se han encontrado {{ $cant_locales }} estacionamientos cerca</h2>
+                <h2> Busca el que mas te acomode</h2>
                 <br>
                 <ul class="lista-sin-punto">
                     <li><a href="/locales" class="btn btn-success"><h3>Lista de Locales</h3></a></li>
