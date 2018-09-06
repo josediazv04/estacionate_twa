@@ -35,12 +35,12 @@
             este mismo momento. ¡Prueba ingresando al mapa por el botón que encuentras aquí abajo!</h3>
             <br>
             <form name="formulario" action="/mapa" role="form">
-                <input name="long" id="posi" type="hidden" value="xx2" onload="getLocation()">
+                <input name="long" id="posi" type="hidden" value="xx2">
                 <input name="lati" id="posi2" type="hidden" value="xx2">
-                <button type="submit" class="btn btn-success"><b><h4>¡Ingresa al Mapa!</h4></b></button>
+                <button type="submit" class="btn btn-success" ><b><h4>¡Ingresa al Mapa!</h4></b></button>
             </form>
             <br>
-            {{--<button type="hidden" class="btn btn-primary" onload="getLocation()"><b><h4>¡Obten tu posición!</h4></b></button>--}}
+            <!--<button type="hidden" class="btn btn-primary" onClick="getLocation()"><b><h4>¡Obten tu posición!</h4></b></button>-->
         </div>
     </section>
 </section>
@@ -50,10 +50,14 @@
 </footer>
 
 <script>
+
     var x = document.getElementById("posi");
     var y = document.getElementById("posi2");
 
+    onload=getLocation();
+
     function getLocation() {
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
         } else {
