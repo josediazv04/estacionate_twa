@@ -27,11 +27,12 @@
     23 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     24 => 'Laravel\\Tinker\\TinkerServiceProvider',
     25 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    26 => 'Cornford\\Googlmapper\\MapperServiceProvider',
-    27 => 'App\\Providers\\AppServiceProvider',
-    28 => 'App\\Providers\\AuthServiceProvider',
-    29 => 'App\\Providers\\EventServiceProvider',
-    30 => 'App\\Providers\\RouteServiceProvider',
+    26 => 'Midnite81\\GeoLocation\\GeoLocationServiceProvider',
+    27 => 'Cornford\\Googlmapper\\MapperServiceProvider',
+    28 => 'App\\Providers\\AppServiceProvider',
+    29 => 'App\\Providers\\AuthServiceProvider',
+    30 => 'App\\Providers\\EventServiceProvider',
+    31 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -156,6 +157,8 @@
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
     'NunoMaduro\\Collision\\Contracts\\Provider' => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    'midnite81.geolocation' => 'Midnite81\\GeoLocation\\GeoLocationServiceProvider',
+    'Midnite81\\GeoLocation\\Contracts\\Services\\GeoLocation' => 'Midnite81\\GeoLocation\\GeoLocationServiceProvider',
   ),
   'when' => 
   array (
@@ -199,6 +202,9 @@
     array (
     ),
     'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => 
+    array (
+    ),
+    'Midnite81\\GeoLocation\\GeoLocationServiceProvider' => 
     array (
     ),
   ),
